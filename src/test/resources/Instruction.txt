@@ -1,0 +1,27 @@
+First build the testNG architecture
+-inside src/test all the packages are included
+-create config, pages,testRunner,userModel packages
+-inside build.gradle, add dependencies: Selenium,TestNG, RestAssure,CommonsConfiguration. You can use my build.gradle
+-under resources, there will be a file called config.properties, where you will save accessToken of Google Gmail API
+
+
+--------------------------------------------------------------------------------------------
+Links for important dependencies: (Just copy and paste to build.gradle at dependency)
+
+   // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation("org.testng:testng:7.11.0")
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.39.0")
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation("io.rest-assured:rest-assured:5.5.6")
+    // https://mvnrepository.com/artifact/commons-configuration/commons-configuration
+    implementation("commons-configuration:commons-configuration:1.10")
+
+
+-------------------------------------------------------------------------------------------
+Prepare your test ground:
+-Make sure to create setup at config to declare window size,driver,timeout and quit command
+-Add an userModel inside config
+-In pages package, find the locators for specific elements to communicate for specific pages
+-Inside testRunner package, the running commands need to be executed
+-Inside service package, Gmail Service need to be run
