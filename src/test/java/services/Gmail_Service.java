@@ -12,6 +12,7 @@ import java.util.Properties;
 import static io.restassured.RestAssured.given;
 
 // At constructor, call your file where you have store the token value
+// Create a config.properties file in your resource folder, I have created an config.properties_example for you. Copy inside the file and replace YOUR_ACCESS_TOKEN with your gmail authorized access token. 
 
 
 public class Gmail_Service {
@@ -43,8 +44,8 @@ public class Gmail_Service {
         //Gmail message body are stored at snippet, so, we take snippet to see inside gmail
 
 
-        Gmail_Service gmailService=new Gmail_Service();
-        String messageId=gmailService.getGmailList();
+        
+        String messageId=getGmailList();
         RestAssured.baseURI="https://gmail.googleapis.com";
         Response res=given().contentType("application/json").header("Authorization","Bearer "+prop.getProperty("token"))
                 .when().get("/gmail/v1/users/me/messages/"+messageId);
