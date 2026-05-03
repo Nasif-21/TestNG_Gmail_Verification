@@ -22,7 +22,7 @@ public class SignUpTestRunner extends Setup {
         Faker faker=new Faker();
         String firstName=faker.name().firstName();
         String lastName=faker.name().lastName();
-        String email="skfamily0304+"+Utils.randomNumber(100,999)+"@gmail.com";
+        String email="YOUR_GMAIL_ADDRESS+"+Utils.randomNumber(100,999)+"@gmail.com";   //use your gmail account here
         String password="1234";
         String phoneNumber="0123"+Utils.randomNumber(1000000,9999999);
         String address=faker.country().capital();
